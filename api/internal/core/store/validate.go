@@ -169,9 +169,7 @@ func checkUpstream(upstream *entity.UpstreamDef) error {
 		nodes, ok := entity.NodesFormat(upstream.Nodes).([]*entity.Node)
 		if !ok {
 			return fmt.Errorf("upstrams nodes not support value %v when `pass_host` is `node`", nodes)
-		} else if len(nodes) != 1 {
-			return fmt.Errorf("only support single node for `node` mode currentlywhen `pass_host` is `node`")
-		}
+		} 
 	}
 
 	if upstream.PassHost == "rewrite" && upstream.UpstreamHost == "" {
