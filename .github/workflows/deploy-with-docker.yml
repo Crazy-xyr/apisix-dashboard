@@ -49,7 +49,10 @@ jobs:
             type=local,src=/tmp/.buildx-cache
           cache-to: |
             type=local,dest=/tmp/.buildx-cache
-
+          target: api-builder
+      - name: show cache2
+        shell: bash
+        run:  ls -l /tmp/.buildx-cache
       - name: Modify Config
         run: |
           sed -i 's/127.0.0.1:2379/172.16.238.10:2379/' api/conf/conf.yaml
