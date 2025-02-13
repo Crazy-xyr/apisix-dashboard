@@ -35,6 +35,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-buildx-apisixdashboard-
             ${{ runner.os }}-buildx-
+      - name: show cache
+        shell: bash
+        run: mkdir -p /tmp/.buildx-cache && ls -l /tmp/.buildx-cache
 
       - name: Build Docker Image
         uses: docker/build-push-action@v2
