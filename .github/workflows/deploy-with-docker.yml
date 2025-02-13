@@ -47,7 +47,7 @@ jobs:
             type=local,src=/tmp/.buildx-cache
           cache-to: |
             type=local,dest=/tmp/.buildx-cache
-          target: api-builder
+          output: type=tar,dest=/tmp/dashboard.tar
       - name: show cache2
         shell: bash
         run:  ls -l /tmp/.buildx-cache
