@@ -47,10 +47,9 @@ jobs:
             type=local,src=/tmp/.buildx-cache
           cache-to: |
             type=local,dest=/tmp/.buildx-cache
-          output: type=tar,dest=/tmp/output/
       - name: show cache2
         shell: bash
-        run:  ls -l /tmp/.buildx-cache && ls -l /tmp/output/
+        run:  ls -l /tmp/.buildx-cache &&  docker save dashboard:ci  -o /tmp/output.tar
 
       - name: Modify Config
         run: |
@@ -84,7 +83,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: img_dashboard.tar
-          path: /tmp/output
+          path: /tmp/output.tar
           retention-days: 5
 
 
