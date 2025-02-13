@@ -35,7 +35,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-buildx-apisixdashboard-
             ${{ runner.os }}-buildx-
-
+      - uses: docker/setup-compose-action@v1.1.0
 
       - name: Build Docker Image
         uses: docker/build-push-action@v2
