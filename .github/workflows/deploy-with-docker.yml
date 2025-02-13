@@ -73,7 +73,7 @@ jobs:
       - name: Run Docker Compose
         working-directory: ./api/test/docker-deploy
         run: |
-          docker-compose up -d
+          docker compose up -d
           sleep 5
           docker logs docker-deploy_managerapi_1
 
