@@ -73,7 +73,6 @@ jobs:
       - name: Run Docker Compose
         working-directory: ./api/test/docker-deploy
         run: |
-          apt-get install docker docker-compose -y
           docker-compose up -d
           sleep 5
           docker logs docker-deploy_managerapi_1
