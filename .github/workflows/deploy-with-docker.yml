@@ -80,4 +80,11 @@ jobs:
       - name: Run Test
         run: api/test/shell/manager_smoking.sh -s false
         continue-on-error: true
+      - name: 'Upload Artifact'
+        uses: actions/upload-artifact@v4
+        with:
+          name: img_dashboard.tar
+          path: /tmp/dashboard.tar
+          retention-days: 5
+
 
