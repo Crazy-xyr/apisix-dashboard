@@ -47,13 +47,13 @@ then
    echo "skip docker check"
 else
    # Version output
-	verline=$(docker logs docker-deploy_managerapi_1 | grep -E "^Version : [A-Za-z0-9\-\_\.]+")
+	verline=$(docker logs docker-deploy-managerapi-1 | grep -E "^Version : [A-Za-z0-9\-\_\.]+")
 	if [ -z "$verline" ];then
 	    echo "no Version output"
 	    exit 1
 	fi
 	# Version output
-	hashline=$(docker logs docker-deploy_managerapi_1 | grep -E "^GitHash : [A-Za-z0-9\-\_\.]+")
+	hashline=$(docker logs docker-deploy-managerapi-1 | grep -E "^GitHash : [A-Za-z0-9\-\_\.]+")
 	if [ -z "$hashline" ];then
 	    echo "no GitHash output"
 	    exit 1
