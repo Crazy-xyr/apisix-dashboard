@@ -85,20 +85,6 @@ const Component: React.FC<Props> = ({ form, readonly }) => {
             );
           }
 
-          if (
-            form.getFieldValue('pass_host') === 'node' &&
-            (form.getFieldValue('submitNodes') || []).length !== 1
-          ) {
-            notification.warning({
-              message: formatMessage({
-                id: 'component.upstream.other.pass_host-with-multiple-nodes.title',
-              }),
-              description: formatMessage({
-                id: 'component.upstream.other.pass_host-with-multiple-nodes',
-              }),
-            });
-            form.setFieldsValue({ pass_host: 'pass' });
-          }
           return null;
         }}
       </Form.Item>
